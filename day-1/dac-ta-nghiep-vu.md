@@ -5,12 +5,15 @@
 + phone_number (string): Số điện thoại liên hệ (dùng để xác nhận booking).
 + email (string): Địa chỉ email.
 + created_at (timestamp): Thời gian đăng ký tài khoản.
+
 - Sân cầu lông (Court)
 + court_id (PK, string/uuid): Mã định danh duy nhất của sân (VD: COURT-01).
 + name (string): Tên sân (VD: Sân số 1 - Thảm VIP).
 + court_type (string): Loại sân (VD: Thảm PVC, Sân gỗ).
 + price_per_hour (decimal/integer): Giá thuê trên 1 giờ (VNĐ).
-+ status (string): Trạng thái sân (ACTIVE - Hoạt động, MAINTENANCE - Bảo trì).- Lịch đặt sân (Booking)
++ status (string): Trạng thái sân (ACTIVE - Hoạt động, MAINTENANCE - Bảo trì).
+
+- Lịch đặt sân (Booking)
 + booking_id (PK, string/uuid): Mã định danh duy nhất của lịch đặt.
 + customer_id (FK): Tham chiếu đến Khách hàng đặt sân.
 + court_id (FK): Tham chiếu đến Sân được đặt.
