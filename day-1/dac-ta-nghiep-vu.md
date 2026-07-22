@@ -19,11 +19,13 @@
 + end_time (time): Giờ kết thúc (VD: 19:00).
 + total_price (decimal/integer): Tổng tiền = Số giờ chơi * price_per_hour.
 + status (string): Trạng thái lịch (PENDING - Chờ duyệt, CONFIRMED - Đã xác nhận, CANCELLED - Đã hủy).
+
 (b) Luật nghiệp vụ 
 - Quy tắc quan hệ thực thể: Một Lịch đặt sân (Booking) phải thuộc về đúng 1 Khách hàng (Customer) và áp dụng cho đúng 1 Sân cầu lông (Court).
 - Quy tắc giá trị: Giá thuê sân trên một giờ (price_per_hour) và Tổng tiền đặt sân (total_price) không được là số âm hoặc bằng 0 (phải $> 0$).
 - Quy tắc thời gian đặt: Giờ kết thúc (end_time) phải lớn hơn giờ bắt đầu (start_time), và thời lượng thuê tối thiểu cho mỗi lần đặt là 1 giờ.
 - Quy tắc trạng thái sân: Khách hàng chỉ được phép tạo lịch đặt mới đối với những sân đang có trạng thái là ACTIVE (không được đặt sân đang trong trạng thái MAINTENANCE).
+
 (c) Ràng buộc toàn vẹn 
 - Ràng buộc duy nhất (Unique Constraint): Số điện thoại (phone_number) và Email (email) của Khách hàng trong hệ thống phải là duy nhất (không được trùng lặp giữa hai khách hàng khác nhau).
 - Ràng buộc chống trùng lịch (No Double-Booking Constraint): Không được tồn tại 2 Lịch đặt sân (Booking) có trạng thái CONFIRMED hoặc PENDING trên cùng một Sân (court_id) trong cùng một Ngày (booking_date) mà có khung giờ bị giao nhau (Overlapping time slots).
